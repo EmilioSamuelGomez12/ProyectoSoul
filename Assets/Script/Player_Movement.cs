@@ -16,7 +16,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] float jumpForce = 6f;
 
 
-    [Header("GROUNDCHECK AND PARAMETERS")]
+    [Header("CHECKs AND PARAMETERS")]
     bool wasGrounded;
     bool wasFalling;
     float startOfFall;
@@ -24,6 +24,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] Transform pushCheck;
     [SerializeField] LayerMask ground;
     [SerializeField] LayerMask pushAbleObject;
+
 
     PlayerHealthManager theHealthMan;
 
@@ -62,10 +63,11 @@ public class Player_Movement : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
         }
 
-        if (Input.GetButton("Fire1"))
-        {
-            AbilityDuration();
-        }
+        //if (Input.GetButton("Fire1"))
+        //{
+        //    AbilityDuration();
+        //}
+   
 
         rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
         Vector3 V = new Vector3(horizontalInput * movementSpeed, 0f, verticalInput * movementSpeed);
@@ -110,7 +112,7 @@ public class Player_Movement : MonoBehaviour
 
     bool IsGrounded()
     {
-        return Physics.CheckSphere(groundCheck.position, .1f, ground);
+        return Physics.CheckSphere(groundCheck.position, .1f, ground) || Physics.CheckSphere(groundCheck.position, .1f, pushAbleObject);
     }
 
     public void AbilityDuration()
@@ -127,15 +129,15 @@ public class Player_Movement : MonoBehaviour
                 {
                     timeRemaining[0] = 0;
                     timerIsRunning = false;
-                    StartCoroutine(StartCooldown());
+                    StartCoroutine(StartCooldown(10));
                 }
             }
     }
 
-    public IEnumerator StartCooldown()
+    public IEnumerator StartCooldown(int time)
     {
-        yield return new WaitForSeconds(10);
-        timeRemaining[0] = 10;
+        yield return new WaitForSeconds(time);
+        timeRemaining[0] = time;
         timerIsRunning = true;
     }
 

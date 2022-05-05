@@ -6,22 +6,33 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] GameObject[] waypoints;
     int currentWaypointIndex = 0;
+    [SerializeField] bool isMovable;
 
     [SerializeField] float speed = 1f;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].transform.position) < .1f)
+        if(isMovable)
         {
-
-            currentWaypointIndex++;
-            if (currentWaypointIndex >= waypoints.Length)
+            if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].transform.position) < .1f)
             {
-                currentWaypointIndex = 0;
-            }
-        }
 
-        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime);
+                currentWaypointIndex++;
+                if (currentWaypointIndex >= waypoints.Length)
+                {
+                    currentWaypointIndex = 0;
+                }
+            }
+
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime);
+        }
+        
     }
+
+    public void MovableCondition(bool condition)
+    {
+        isMovable = condition;
+    }
+
 }

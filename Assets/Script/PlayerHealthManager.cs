@@ -12,9 +12,6 @@ public class PlayerHealthManager : MonoBehaviour
 
     private Vector3 respawnPoint;
 
-    public Player_Movement playerMovement;
-
-
     private void Start()
     {
         playerLives = 3;

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlateTrigger : MonoBehaviour
 {
+    [SerializeField] GameObject[] DoorsOrPlatforms;
     [SerializeField] private Animator myDoor = null;
     [SerializeField] private string Animacion;
+    [SerializeField] private int DoorType;
 
     bool isOpended = false;
 
@@ -13,8 +15,19 @@ public class PlateTrigger : MonoBehaviour
     {
         if (!isOpended)
         {
-            isOpended = true;
-            myDoor.Play(Animacion, 0, 0.0f);
+            switch (DoorType) 
+            {
+                case 1:
+                    isOpended = true;
+                    myDoor.Play(Animacion, 0, 0.0f);
+                    break;
+                case 2:
+                    for(int n=0; n < DoorsOrPlatforms.Length; n++)
+                    {
+                        DoorsOrPlatforms[n].gameObject.GetComponent<Movement>().MovableCondition(true);
+                    }
+                    break;
+            }
         }    
        
     }

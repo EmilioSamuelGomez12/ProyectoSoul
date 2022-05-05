@@ -65,7 +65,6 @@
     <Compile Include="Assets\Script\PlayerHealthManager.cs" />
     <Compile Include="Assets\Script\Player_Movement.cs" />
     <Compile Include="Assets\Script\DamageZone.cs" />
-    <Compile Include="Assets\Script\Prueba.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
