@@ -9,11 +9,13 @@ public class PlayerHealthManager : MonoBehaviour
 
     private int playerLives;
     private int currentLives;
+    public GameObject Objt;
 
     private Vector3 respawnPoint;
 
     private void Start()
     {
+        
         playerLives = 3;
         currentLives = playerLives;
         respawnPoint = transform.position;
@@ -37,8 +39,13 @@ public class PlayerHealthManager : MonoBehaviour
     {
         if(currentLives < 1)
         {
-            ReloadLevel();
-        }else
+            GetComponent<DeathMenu>().PlayerDies();
+            GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<Player_Movement>().enabled = false;
+        }
+        else
         {
             currentLives--;
             GetComponent<MeshRenderer>().enabled = false;
@@ -55,10 +62,7 @@ public class PlayerHealthManager : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = true;
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Player_Movement>().enabled = true;
+        GetComponent<Player_Movement>().enabled = true;
     }
 
-    void ReloadLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
 }
