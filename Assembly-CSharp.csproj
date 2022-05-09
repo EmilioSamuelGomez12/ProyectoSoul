@@ -65,11 +65,11 @@
     <Compile Include="Assets\Script\PlayerHealthManager.cs" />
     <Compile Include="Assets\Script\Player_Movement.cs" />
     <Compile Include="Assets\Script\DamageZone.cs" />
-    <Compile Include="Assets\PauseMenu.cs" />
+    <Compile Include="Assets\Script\PauseMenu.cs" />
+    <Compile Include="Assets\Script\PlayerMainMenuMovement.cs" />
     <Compile Include="Assets\Script\SettingsMenu.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
     <Compile Include="Assets\Script\DeathMenu.cs" />
-    <Compile Include="Assets\PlayerMainMenuMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

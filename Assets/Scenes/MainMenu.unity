@@ -1411,34 +1411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfa04fd656c8e2b41837ff524c5a7756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &769508352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769508348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fe2414b71e863543a4d57686dbf21bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crouchSpeed: 3
-  ogSpeed: 6
-  movementSpeed: 6
-  rotationSpeed: 750
-  jumpForce: 6.5
-  groundCheck: {fileID: 1530785380}
-  pushCheck: {fileID: 674809905}
-  ground:
-    serializedVersion: 2
-    m_Bits: 64
-  pushAbleObject:
-    serializedVersion: 2
-    m_Bits: 128
-  timeRemaining:
-  - 10
-  timerIsRunning: 0
 --- !u!95 &769508353
 Animator:
   serializedVersion: 3
@@ -1499,19 +1471,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &769508355
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769508348}
-  m_Material: {fileID: 13400000, guid: 16d7ecb344c7ad747991da902bde86db, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.35008347, y: 0.15692365, z: 0.28786093}
-  m_Center: {x: 0.007378578, y: 0.7299132, z: 0.33139637}
 --- !u!136 &769508356
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4352,7 +4311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1674111017}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Cammus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
