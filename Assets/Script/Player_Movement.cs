@@ -63,10 +63,10 @@ public class Player_Movement : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
         }
 
-        //if (Input.GetButton("Fire1"))
-        //{
-        //    AbilityDuration();
-        //}
+        if (Input.GetButton("Fire1"))
+        {
+            AbilityDuration();
+        }
    
 
         rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);

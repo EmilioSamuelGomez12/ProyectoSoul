@@ -13,7 +13,7 @@ public class PlateKey : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.CompareTag(Key.name))
+        if(col.CompareTag(Key.tag))
         {
             if (!isOpended)
             { 
