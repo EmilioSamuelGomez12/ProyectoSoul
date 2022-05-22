@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5803599446988821286
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.68782496
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0000582
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.6477814
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 50.447987
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 31.076977
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.010048247
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -1.0980528e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000015832482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.9999495
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: beb0c4de6dd38c64cb42568e5ba137fe, type: 2}
+    - target: {fileID: 919132149155446097, guid: a081a043eec54c141b640217507f43d7, type: 3}
+      propertyPath: m_Name
+      value: BOOKS FBX
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a081a043eec54c141b640217507f43d7, type: 3}
+--- !u!1 &6650672208955911799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a081a043eec54c141b640217507f43d7, type: 3}
+  m_PrefabInstance: {fileID: 5803599446988821286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1804683408
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6650672208955911799}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 129.39195, y: 129.87416, z: 22.686512}
+  m_Center: {x: 2.523488, y: 52.46372, z: -0.0000065400777}

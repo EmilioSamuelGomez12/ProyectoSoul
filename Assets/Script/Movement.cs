@@ -35,4 +35,13 @@ public class Movement : MonoBehaviour
         isMovable = condition;
     }
 
+    public void DestroyDoor(bool condition)
+    {
+        if(condition==true)
+        {
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<BoxCollider>().enabled = false;
+        }
+    }
+
 }

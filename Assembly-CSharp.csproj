@@ -70,7 +70,6 @@
     <Compile Include="Assets\Script\SettingsMenu.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
     <Compile Include="Assets\Script\DeathMenu.cs" />
-    <Compile Include="Assets\Script\LigthMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

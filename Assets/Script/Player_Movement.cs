@@ -77,6 +77,7 @@ public class Player_Movement : MonoBehaviour
 
         if (rb.velocity != Vector3.zero)
         {
+            
             animator.SetBool("isRunning", true);
             Quaternion toRotation = Quaternion.LookRotation( V );
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
@@ -90,6 +91,7 @@ public class Player_Movement : MonoBehaviour
                 GetComponent<BoxCollider>().enabled = false;
                 animator.SetBool("isPushing", false);
             }
+            
         }
         else
         {
@@ -112,6 +114,7 @@ public class Player_Movement : MonoBehaviour
 
     bool IsGrounded()
     {
+        animator.SetBool("isJumping", false);
         return Physics.CheckSphere(groundCheck.position, .1f, ground) || Physics.CheckSphere(groundCheck.position, .1f, pushAbleObject);
     }
 

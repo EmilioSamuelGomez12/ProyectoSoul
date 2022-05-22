@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlateTrigger : MonoBehaviour
 {
     [SerializeField] GameObject[] DoorsOrPlatforms;
+    [SerializeField] GameObject Doors2Destroy = null;
     [SerializeField] private Animator myDoor = null;
     [SerializeField] private string Animacion;
     [SerializeField] private int DoorType;
@@ -15,6 +16,7 @@ public class PlateTrigger : MonoBehaviour
     {
         if (!isOpended)
         {
+            Doors2Destroy.gameObject.GetComponent<Movement>().DestroyDoor(true);
             switch (DoorType) 
             {
                 case 1:
