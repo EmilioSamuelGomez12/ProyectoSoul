@@ -71,6 +71,13 @@
     <Compile Include="Assets\Script\SettingsMenu.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
     <Compile Include="Assets\Script\DeathMenu.cs" />
+    <Compile Include="Assets\Script\DialogManager.cs" />
+    <Compile Include="Assets\Script\Dialog.cs" />
+    <Compile Include="Assets\Script\DialogTrigger.cs" />
+    <Compile Include="Assets\Script\PalyerDialogManager.cs" />
+    <Compile Include="Assets\Script\TextTriggers.cs" />
+    <Compile Include="Assets\Script\LevelEnd.cs" />
+    <Compile Include="Assets\Script\FinalSceneDialogManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

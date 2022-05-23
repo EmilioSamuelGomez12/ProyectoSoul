@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealthManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("AUDIO SHENANNIGANS")]
+    [SerializeField] private AudioSource ded;
 
     private int playerLives;
     private int currentLives;
@@ -37,6 +38,9 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void Die()
     {
+        ded.volume = Random.Range(0.8f, 1f);
+        ded.pitch = Random.Range(0.7f, 1.5f);
+        ded.Play();
         if(currentLives < 1)
         {
             GetComponent<DeathMenu>().PlayerDies();

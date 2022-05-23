@@ -15,15 +15,19 @@ public class Player_Movement : MonoBehaviour
     [Header("JUMP SETTINGS")]
     [SerializeField] float jumpForce = 6f;
 
+    [Header("AUDIO SHENANNIGANS")]
+    [SerializeField] private AudioSource walking;
 
     [Header("CHECKs AND PARAMETERS")]
-    bool wasGrounded;
-    bool wasFalling;
-    float startOfFall;
     [SerializeField] Transform groundCheck;
     [SerializeField] Transform pushCheck;
     [SerializeField] LayerMask ground;
     [SerializeField] LayerMask pushAbleObject;
+    bool isWalking;
+    bool wasGrounded;
+    bool wasFalling;
+    float startOfFall;
+    
 
 
     PlayerHealthManager theHealthMan;
@@ -50,23 +54,29 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rb.velocity == Vector3.zero)
+        {
+            walking.Stop();
+        }
 
-        movementSpeed = ogSpeed;
+
+            movementSpeed = ogSpeed;
         shadowState = false;
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
         
 
-        if (Input.GetButton("Jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+
         }
 
-        if (Input.GetButton("Fire1"))
-        {
-            AbilityDuration();
-        }
+        //if (Input.GetButton("Fire1"))
+        //{
+        //    AbilityDuration();
+        //}
    
 
         rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
@@ -77,8 +87,40 @@ public class Player_Movement : MonoBehaviour
 
         if (rb.velocity != Vector3.zero)
         {
+            if ((rb.velocity != Vector3.zero))
+            {
+                
+                if (IsGrounded())
+                {
+                    animator.SetBool("isJumping", false);
+                    isWalking = true;
+                }         
+                animator.SetBool("isRunning", true);
+            }
+            else
+                isWalking = false;
+
+            if ((rb.velocity != Vector3.zero) && !IsGrounded())
+            {
+                animator.SetBool("isJumping", true);
+                isWalking = false;
+                walking.Stop();
+            }
+
+
+            if (isWalking)
+            {
+                if (!walking.isPlaying)
+                {
+                    walking.volume = Random.Range(0.3f, 0.8f);
+                    walking.Play();
+                }
+                
+            }
+            else 
+                walking.Stop();
+
             
-            animator.SetBool("isRunning", true);
             Quaternion toRotation = Quaternion.LookRotation( V );
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
             if (Physics.CheckSphere(pushCheck.position, .1f, pushAbleObject))
@@ -97,6 +139,7 @@ public class Player_Movement : MonoBehaviour
         {
             animator.SetBool("isRunning", false);
             animator.SetBool("isPushing", false);
+            animator.SetBool("isJumping", false);
         }
 
     }
@@ -114,7 +157,6 @@ public class Player_Movement : MonoBehaviour
 
     bool IsGrounded()
     {
-        animator.SetBool("isJumping", false);
         return Physics.CheckSphere(groundCheck.position, .1f, ground) || Physics.CheckSphere(groundCheck.position, .1f, pushAbleObject);
     }
 
